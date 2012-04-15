@@ -161,6 +161,9 @@ static void pm8xxx_vib_enable(struct timed_output_dev *dev, int value)
 					 timed_dev);
 	unsigned long flags;
 
+  if ((value == 20) || (value == 21))
+    value = 40;
+
 /*	spin_lock_irqsave(&vib->lock, flags);	*/
 
 retry:
